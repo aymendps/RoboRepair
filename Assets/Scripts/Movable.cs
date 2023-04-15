@@ -24,7 +24,6 @@ public class Movable : MonoBehaviour
 
     public void SetVelocity(float x)
     {
-        Debug.Log(x);
         _shouldKeepMoving = x != 0;
         _rb2D.velocity = new Vector2(x, _rb2D.velocity.y);
         _velocityX = x;
