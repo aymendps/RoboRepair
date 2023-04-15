@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -49,5 +50,13 @@ public class SpellManual : MonoBehaviour
     public void SetManualImage(int index)
     {
         _currentImage.sprite = manualPages[index];
+        manualButtons[index].image.color = Color.black;
+        var list = new List<int>() { 0, 1, 2 };
+        list.Remove(index);
+        foreach (var i in list)
+        {
+            manualButtons[i].image.color = Color.gray;
+        }
+        
     }
 }
