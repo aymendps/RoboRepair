@@ -47,7 +47,7 @@ public class TargetManager : MonoBehaviour
             var variable = instructionText.text.Substring(instructionText.text.IndexOf("SetVelocity ") + 12);
             if (int.TryParse(variable, out var x))
             {
-                _target.SetVelocity(x/5f);
+                _target.SetVelocity(x/2f);
             }
             else
             {

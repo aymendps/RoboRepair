@@ -1,8 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Movable : MonoBehaviour
 {
+    public bool isPlayer = false;
+
     private bool _shouldKeepMoving = false;
     private float _velocityX = 0f;
     private Rigidbody2D _rb2D;
@@ -27,7 +28,6 @@ public class Movable : MonoBehaviour
         _shouldKeepMoving = x != 0;
         _rb2D.velocity = new Vector2(x, _rb2D.velocity.y);
         _velocityX = x;
-
     }
 
     public void SetGravity(bool useGravity)
@@ -41,6 +41,15 @@ public class Movable : MonoBehaviour
         {
             _rb2D.AddForce(force, ForceMode2D.Impulse);
             _lastTimeForceCalled = Time.time;
+            _shouldKeepMoving = false;
+            _velocityX = 0f;
         }
+    }
+
+    public void Stop()
+    {
+        _rb2D.velocity = Vector2.zero;
+        _shouldKeepMoving = false;
+        _velocityX = 0;
     }
 }
