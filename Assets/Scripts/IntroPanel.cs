@@ -8,6 +8,13 @@ public class IntroPanel : MonoBehaviour
         {
                 GetComponent<Image>().DOFillAmount(0, 0.5f)
                         .SetDelay(0.5f)
-                        .OnComplete(()=>{gameObject.SetActive(false);});
+                        .OnComplete(() =>
+                        {
+                                if (RetryCanvas.Instance != null)
+                                { 
+                                        RetryCanvas.Instance.ShowUI();
+                                }
+                                gameObject.SetActive(false);
+                        });
         }
 }

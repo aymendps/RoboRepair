@@ -17,9 +17,19 @@ public class FinishSign : MonoBehaviour
                 
                 other.gameObject.GetComponent<Movable>().Stop();
                 other.gameObject.GetComponent<Animator>().Play("Win");
-                levelSuccessText.DOFade(1, 1f);
+                levelSuccessText.DOFade(1, 1f).OnStart(() =>
+                {
+                        BackgroundMusic.Instance.PlaySuccessClip();
+                });
                 blackPanel.DOFillAmount(1, 0.5f)
                         .SetDelay(1.5f)
+                        .OnStart(() =>
+                        {
+                                if (RetryCanvas.Instance != null)
+                                {
+                                        RetryCanvas.Instance.HideUI();
+                                }
+                        })
                         .OnComplete(() =>
                         { 
                                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);

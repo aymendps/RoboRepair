@@ -8,5 +8,6 @@ public class MainMenu : MonoBehaviour
     {
         introPanel.AddComponent<IntroPanel>();
         gameObject.SetActive(false);
+        BackgroundMusic.Instance.PlayPlayClip();
     }
 }

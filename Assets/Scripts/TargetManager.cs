@@ -28,6 +28,7 @@ public class TargetManager : MonoBehaviour
 
         targetText.text = hit.transform.gameObject.name;
         _target = hit.transform.gameObject.GetComponent<Movable>();
+        BackgroundMusic.Instance.PlayClickClip();
     }
 
     private void UpdateButton()
@@ -49,6 +50,7 @@ public class TargetManager : MonoBehaviour
             {
                 _target.SetVelocity(x/2f);
                 instructionText.text = "";
+                BackgroundMusic.Instance.PlayVelocityClip();
             }
             else
             {
@@ -62,11 +64,13 @@ public class TargetManager : MonoBehaviour
             {
                 _target.SetGravity(true);
                 instructionText.text = "";
+                BackgroundMusic.Instance.PlayGravityClip();
             }
             else if (variable.ToLower().Trim() == "false")
             {
                 _target.SetGravity(false);
                 instructionText.text = "";
+                BackgroundMusic.Instance.PlayGravityClip();
             }
             else
             {
@@ -88,6 +92,7 @@ public class TargetManager : MonoBehaviour
                 {
                     _target.AddForce(new Vector2(x > 6 ? 6 : x, y > 6 ? 6 : y));
                     instructionText.text = "";
+                    BackgroundMusic.Instance.PlayForceClip();
                 }
                 else
                 {
