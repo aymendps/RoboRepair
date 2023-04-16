@@ -26,8 +26,8 @@ public class Movable : MonoBehaviour
     public void SetVelocity(float x)
     {
         _shouldKeepMoving = x != 0;
-        _rb2D.velocity = new Vector2(x, _rb2D.velocity.y);
-        _velocityX = x;
+        _rb2D.velocity = new Vector2(x > 3 ? 3 : x, _rb2D.velocity.y);
+        _velocityX = x > 3 ? 3 : x;
     }
 
     public void SetGravity(bool useGravity)

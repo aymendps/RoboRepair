@@ -48,6 +48,7 @@ public class TargetManager : MonoBehaviour
             if (int.TryParse(variable, out var x))
             {
                 _target.SetVelocity(x/2f);
+                instructionText.text = "";
             }
             else
             {
@@ -60,10 +61,12 @@ public class TargetManager : MonoBehaviour
             if (variable.ToLower().Trim() == "true")
             {
                 _target.SetGravity(true);
+                instructionText.text = "";
             }
             else if (variable.ToLower().Trim() == "false")
             {
                 _target.SetGravity(false);
+                instructionText.text = "";
             }
             else
             {
@@ -83,7 +86,8 @@ public class TargetManager : MonoBehaviour
                 var stringY = variables.Substring(spaceIndex + 1);
                 if (int.TryParse(stringX, out var x) && int.TryParse(stringY, out var y))
                 {
-                    _target.AddForce(new Vector2(x, y));
+                    _target.AddForce(new Vector2(x > 6 ? 6 : x, y > 6 ? 6 : y));
+                    instructionText.text = "";
                 }
                 else
                 {
