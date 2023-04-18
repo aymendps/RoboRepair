@@ -1284,6 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71295f5cc5b844a799443b459622f115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetManager: {fileID: 1223931252}
 --- !u!1001 &250342848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2750,16 +2751,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The top boxes have <color="white">positive</color> gravity scale.
+  m_text: 'The top <color="red">boxes</color> have <color="white">positive</color>
+    gravity scale.
 
-    The
-    bottom boxes have <color="white">negative</color> gravity scale.
+    The bottom <color="red">boxes</color> have <color="white">negative</color>
+    gravity scale.
 
-    The boxes
-    have the <color="white">same size.</color>
+    The <color="red">boxes</color> have the <color="white">same
+    size.</color>
 
-    Hence, they cancel their opposing
-    forces.'
+    Hence, they cancel their opposing forces.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 587ae572abdcfae40a771a3f36a26400, type: 2}
   m_sharedMaterial: {fileID: 7695343913533648617, guid: 587ae572abdcfae40a771a3f36a26400, type: 2}
@@ -4092,7 +4093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136183e000714cecb4d80724094f0933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackPanel: {fileID: 484964170}
 --- !u!61 &1097116640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5804,7 +5804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136183e000714cecb4d80724094f0933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackPanel: {fileID: 484964170}
 --- !u!1 &2082079544
 GameObject:
   m_ObjectHideFlags: 0
